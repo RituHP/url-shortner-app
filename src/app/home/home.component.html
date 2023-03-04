@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <h1> URL Shortener App</h1>
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label for="url">Enter URL:</label>
+                <input type="text" name="url" id="url" class="form-control" [(ngModel)]="originalUrl" (input)="onInput($event)"/>
+            </div>
+            <button class="btn btn-success mt-2" (click)="onUrlShortening()">Get Short Url</button>
+        </div>
+    </div>
+    <div class="row" *ngIf="shortUrl">
+        <div class="col-xs-12">
+            <div class="form-group mt-5">
+                <label for="shortUrl">Shortened Url</label>
+                <a class="ml" id="shortUrl" [href]="shortUrl" target="_blank">{{shortUrl}}</a>
+            </div>
+        </div>
+    </div>
+</div>
